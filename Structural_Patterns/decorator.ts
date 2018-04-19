@@ -11,12 +11,12 @@ namespace Decorator {
   const _log = console.log;
   console.log = function () {
     const timestamp = `[${new Date().toTimeString()}]`;
-    return _log.apply(this, ...arguments);
+    return _log.apply(this, [timestamp, ...arguments]);
   }
 
 
 
-  
+
   abstract class UIComponent {
     abstract draw(): void;
   }
